@@ -55,13 +55,13 @@
 
 (deftest simple-test
   (is (= [3 4 5 1 2] (main-as-vec (to-inputstream-reader (str/join "\n" ["5 2"
-                                                               "1 2 3 4 5"]))))))
+                                                                         "1 2 3 4 5"]))))))
 
 (deftest simple-test-2
   (is (= [3 4 5 0 1 2] (main-as-vec (to-inputstream-reader (str/join "\n" ["6 3"
-                                                                 "0 1 2 3 4 5"]))))))
+                                                                           "0 1 2 3 4 5"]))))))
 
 (deftest simple-test-3
   (is (= [3 4 0 1 2] (main-as-vec (to-inputstream-reader (str/join "\n" ["5 3"
-                                                               "0 1 2 3 4"]))))))
+                                                                         "0 1 2 3 4"]))))))
 
