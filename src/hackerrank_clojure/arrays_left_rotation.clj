@@ -4,17 +4,6 @@
             [clojure.java.io :as io])
   (:use [clojure.test]))
 
-;; (def do-we-work true)
-
-(def input-08 (clojure.java.io/reader (clojure.java.io/resource "input08.txt")))
-
-;; (binding [*in* input-08])
-
-(def test-string (java.io.StringReader. (str/join ["5 2"
-                                                   "1 2 3 4 5"])))
-
-
-
 (defn main [reader]
   (let [lines (-> reader java.io.BufferedReader. line-seq)
         n_temp (nth lines 0) 
@@ -51,13 +40,15 @@
         result))))
 
 
+
+(def input-08 (clojure.java.io/reader (clojure.java.io/resource "input08.txt")))
+
+
 (defn to-inputstream-reader [str-in]
   (-> str-in
       .getBytes
       io/input-stream
-      java.io.InputStreamReader.
-      ;; java.io.BufferedReader.
-      ))
+      java.io.InputStreamReader.))
 
 (defn- main-as-vec [reader]
   (-> (main reader) aclone vec))
